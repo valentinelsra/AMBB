@@ -6,9 +6,14 @@
 
 .app {
     height : 100vh;
+    min-height:100vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
 
 /* ------------------------------------------------ BUTTONS ---------------------------------------------------*/
@@ -16,7 +21,7 @@
 #previous,
 #next {
     color: black;
-    width: 5%;
+    width: 50%;
     height: 5%;
     background: none;
     border: 2px solid black;
@@ -35,16 +40,16 @@
 }
 
 #previous {
-    top: 45%;
-    left: 1%;
+    bottom: 0%;
+    left: 0%;
 }
 
 #next {
-    top: 45%;
-    right: 1%;
+    bottom: 0%;
+    right: 0%;
 }
 
-/* ------------------------------------------------ BLOCKS ---------------------------------------------------*/
+/* ------------------------------------------------- BLOCKS --------------------------------------------------- */
 
 #intro,
 #info,
@@ -58,32 +63,323 @@
     z-index: 1;
 }
 
+/* .................................................. Intro ................................................... */
+
 #intro {
-    background: lightblue;
+    background: white;
     display: block;
 }
 
+h1 {
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal; 
+    font-weight: bold; 
+    line-height: 100px;
+}
+
+/* ............................................... Intro--Flower ............................................... */
+
+:root {
+    --main-flower: #517bd6;
+    --nose: #ffc0cb;
+    --stem: #51d691;
+    --pot: #FF7043;
+    --pot-shadow: #d66f51;
+    --transform-leaves-left: rotate(-283deg) skewX(-12deg)  skewY(-4deg);
+    --transform-leaves-right: rotate(-163deg) skewX(-12deg) skewY(-4deg);
+}
+
+.flower {
+    padding-top: 50px;
+    position: absolute;
+    left: 45%;
+}
+
+.flower__head {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background: var(--main-flower);
+    margin-top: 50px;
+}
+
+.flower__head::after, .flower__head::before {
+    content: '';
+    position: absolute;
+    background: var(--main-flower);
+    border-radius: 20px;
+    left: 0px;
+    width: 120px;
+    height: 40px;
+    transform: rotate(60deg);
+}
+
+.flower__head::before {
+    transform: rotate(-60deg);
+}
+
+.flower__eye {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    background: #fff;
+    border-radius: 50%;
+    animation: blink 3s infinite;
+  }
+.flower__eye.left {
+    left: 30%;
+}
+.flower__eye.right {
+    left: 55%;
+}
+
+.flower__eye span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+    left: 0px;
+    background: black;
+    border-radius: 50%;
+}
+
+.flower__nose {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+    background: var(--nose);
+    border-radius: 50%;
+}
+
+.flower__stem {
+    position: absolute;
+    height: 150px;
+    width: 8px;
+    background: var(--stem);
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.flower__leaf {
+    width: 30px;
+    height: 30px;
+    background: var(--stem);
+    position: absolute;
+    top: 190px;
+    left: 21px;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    transform: var(--transform-leaves-left);
+}
+
+.flower__leaf--shadow {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.25);
+    height: 15px;
+    width: 15px;
+    top: 204px;
+    left: 29px;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    transform: var(--transform-leaves-left);
+}
+  
+.flower__leaf--shadow.oposite {
+    top: 224px;
+    left: 75px;
+    transform: var(--transform-leaves-right);
+}
+
+.flower__leaf.oposite {
+    top: 210px;
+    left: 70px;
+    transform: var(--transform-leaves-right);
+}
+
+.flower__pot {
+    width: 100px;
+    height: 20px;
+    background-color: var(--pot);
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower__pot--shadow {
+    width: 80px;
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid var(--pot-shadow);
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flower__pot--bottom {
+    width: 80px;
+    height: 0px;
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 50px solid var(--pot);
+    top: 20px;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes blink {
+    0%, 100% {
+      transform: scale(1, 0.05);
+    }
+    5%, 95% {
+      transform: scale(1, 1);
+    }
+}
+
+/* .................................................... Info .................................................... */
+
 #info {
-    background: lightgreen;
+    background: white;
     display: none;
 }
 
-#cb {
-    background: lightgrey;
+.form-style-7{
+    max-width: 80%;
+    max-height: 80%;
+    height: 80%;
+	margin: auto;
+	background:#fff;
+	border-radius: 2px;
+	padding: 5%;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+.form-style-7 fieldset{
+    border: none;
+}
+
+.form-style-7 legend {
+    font-size: 1.4em;
+    float: left;
+    top: 0%;
+    position: absolute;
+
+}
+
+.form-style-7 .number {
+    background: #517bd6;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+.form-style-7 li{
+	display: block;
+	padding: 10px;
+	border:1px solid #000000;
+	margin-bottom: 5%;
+    border-radius: 3px;
+}
+
+.form-style-7 li > span{
+	background: #F3F3F3;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    font-size: 16px;
+}
+
+.form-style-7 select{
+	-webkit-appearance: menulist-button;
+    margin: 10px 5px 10px 5px;
+    padding: 2%;
+}
+
+#Parcours {
+    border: none;
+}
+
+#M1 {
+    border: none;
+}
+
+.form-style-7 li > label{
+	display: block;
+	float: left;
+	margin-top: -23px;
+	background: #FFFFFF;
+    height: 14px;
+	padding: 0px 5px 2px 5px;
+	color: #000000;
+	font-size: 20px;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+.form-style-7 input[type="text"],
+.form-style-7 input[type="date"],
+.form-style-7 input[type="datetime"],
+.form-style-7 input[type="email"],
+.form-style-7 input[type="number"],
+.form-style-7 input[type="search"],
+.form-style-7 input[type="time"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	font-size: 18px;
+    padding: 15px 5px 15px 5px;
+    text-align: center;
+    font-weight: bold;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+
+/* .................................................. Indices ................................................... */
+
+#indices {
+    background: white;
     display: none;
 }
 
-#indice1 {
-    background: lightcoral;
-    display: none;
+#Choix_Indice1 {
+    margin-top: 10%;
 }
 
-#indice2 {
-    background: lightgoldenrodyellow;
-    display: none;
+#Choix_IndiceOpt {
+    margin-top: 5%;
 }
+
+/* ................................................... Players ................................................... */
 
 #players {
-    background: lightseagreen;
+    background: white;
     display: none;
 }
