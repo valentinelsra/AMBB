@@ -10,29 +10,92 @@
 <body>
     <div class="app">
         <button id="previous" onclick="Previous_Action();"><</button>
-        <button id="next" onclick="Next_Action();">></button>
+        <button id="next" onclick="Next_Action();">Commencer l'inscription !</button>
         <div id="intro">
-            <p>Bienvenue à toi, camarade M2 !</p>
+            <h1>Bienvenue à toi, camarade M2 !</h1>
             <br>
             <p>Cette année, c'est à toi que revient la mission de participer à l'accueil et au soutien des M1 promo 2020/2021.</p>
             <br>
-            <p>Nous te proposons de t'inscrire au programme de parrainage. Une soirée de rencontre sera organisée la première semaine de reprise des cours.</p>
+            <p>Nous te proposons de t'inscrire au programme de parrainage. <u>Une soirée de rencontre sera organisée la première semaine de reprise des cours.</u></p>
             <br>
             <p>Quelques informations à ton sujet sont nécessaires pour que ton inscription soit validée...</p>
+            <div class="flower">
+                <div class="flower__head">
+                  <div class="flower__eye left">
+                    <span></span>
+                  </div>
+                  <div class="flower__nose"></div>
+                  <div class="flower__eye right">
+                    <span></span>
+                  </div>
+                </div>
+                <div class="flower__leaf"></div>
+                <div class="flower__leaf--shadow">
+                </div>
+                <div class="flower__leaf oposite"></div>
+                <div class="flower__leaf--shadow oposite"></div>
+                <div class="flower__stem"></div>
+                <div class="flower__pot">
+                  <div class="flower__pot--shadow"></div>
+                  <div class="flower__pot--bottom"></div>
+                </div>
+              </div>              
         </div>
         <div id="info">
-            <p>Nom</p>
-            <p>Prénom</p>
-            <p>Filière</p>
+            <form class="form-style-7">
+                <fieldset>
+                    <legend><span class="number">1</span> Formulaire de parrainage</legend>
+                <ul>
+                <li>
+                    <label for="Nom">Nom</label>
+                    <input id="Nom" type="text" name="Nom" maxlength="100">
+                    <span>Entre ton nom de famille suivi de ton prénom</span>
+                </li>
+                <li>
+                    <label for="Email">Email</label>
+                    <input id="Email" type="Email" name="Email" maxlength="100">
+                    <span>Entre une adresse mail valide</span>
+                </li>
+                <li id="Parcours">
+                    <label for="Parcours">Parcours :</label>
+                    <select id="Parcours" name="Parcours">
+                        <option value="Biologie Computationnelle">Biologie Computationnelle</option>
+                        <option value="Gène Ecosytèmes">Gène Ecosytèmes</option>
+                        </optgroup>
+                    </select>      
+                </li>
+                <li id="M1">
+                    <label for="M1">Combien de M1 souhaites-tu parrainer au maximum ?</label>
+                    <select id="M1" name="M1">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        </optgroup>
+                    </select>      
+                </li>
+                </ul>
+                </form>
         </div>
-        <div id="cb">
-            <p>Combien de M1 souhaites-tu parrainer au maximum ?</p>
-        </div>
-        <div id="indice1">
-            <p>Un indice que tu souhaiterais donner à ton M1 afin qu'il puisse te retrouver ?</p>
-        </div>
-        <div id="indice2">
-            <p>Partage une photo de toi enfant/bébé pour l'aiguiller un peu dans sa recherche !</p>
+        <div id="indices">
+            <form class="form-style-7">
+                <fieldset>
+                    <legend><span class="number">2</span> Les indices</legend>
+                    <p>Pour faciliter l'intégration de ton M1, ton AMBB a prévu un jeu le soir du parrainage.</p>
+                    <p>Règles du jeu :</p>
+                    <p> - 2 à 3 indices vont être fournis à ton M1. <br>
+                        - Le premier sera un indice choisi par tes soins. <br>
+                        - Le second te sera proposé parmis une liste d'indices que tes camarades M2 proposerons à l'issu du formulaire de parrainage. Nous reviendrons vers toi ultérieurement pour sa validation. <br>
+                        - Le dernier est optionnel : Partage une photo de toi enfant/bébé pour l'aiguiller un peu dans sa recherche ! </p>
+                <ul>
+                <li id="Choix_Indice1">
+                    <label for="Indice1">Indice 1</label>
+                    <input id="Indice1" type="text" name="Indice1" maxlength="100">
+                    <span>Quel indice souhaites-tu donner à ton M1 afin qu'il puisse te retrouver ?</span>
+                </li>
+                <li id="Choix_IndiceOpt">
+                    <label for="Indice_Opt">Indice optionnel</label>
+                    <input id="Indice_Opt" type="text" name="Indice_Opt" maxlength="100">
+                    <span>Télécharges ici la photo que tu souhaites partager avec lui.</span>
+                </li>
         </div>
         <div id="players">
             <p>Liste des M2 inscrits au programme de parrainage 2020/2021</p>
