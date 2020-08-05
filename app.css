@@ -20,16 +20,16 @@
 #next {
     color: black;
     width: 50%;
-    height: 5%;
+    height: 10%;
     background: none;
-    border: 2px solid black;
+    border: 3px solid black;
     cursor: pointer;
     border-radius: 5px;
     font-size: 20px;
     text-align: center;
     /*transition: all 0.5s ease;*/
-    position: absolute;
-    z-index: 2;
+    position: relative;
+    bottom: 0%;
 }
 
 #previous:hover,
@@ -38,12 +38,10 @@
 }
 
 #previous {
-    bottom: 0%;
     left: 0%;
 }
 
 #next {
-    bottom: 0%;
     right: 0%;
 }
 
